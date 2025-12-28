@@ -1,0 +1,273 @@
+/* ================================
+   STYLORA DESIGN SYSTEM
+   Apple-Inspired Editorial Minimal
+   ================================ */
+
+:root {
+   /* ================================
+       COLOR PALETTE - Luxury Neutral (User Specification)
+       ================================ */
+
+   /* Backgrounds */
+   --color-background: #F7F8F6;
+   /* Warm Off-White */
+   --color-surface: #FFFFFF;
+   /* Primary Surface */
+   --color-surface-secondary: #ECEFEA;
+   /* Secondary Surface */
+
+   /* Text */
+   --color-text-primary: #1F2933;
+   /* Soft Charcoal */
+   --color-text-secondary: #6B7280;
+   /* Muted Text */
+   --color-text-tertiary: #9CA3AF;
+   /* Lightest Text */
+
+   /* Accents */
+   --color-accent: #1F2933;
+   /* Soft Charcoal (Primary Brand) */
+   --color-highlight: #C9D4C1;
+   /* Sage/Olive Tone */
+
+   --color-divider: #E5E7EB;
+
+   /* Semantic */
+   --color-success: #C9D4C1;
+   /* Using Sage as success/brand tone */
+   --color-error: #B85C50;
+   --color-warning: #D4A574;
+   --color-info: #7D8FA3;
+
+   /* Borders */
+   --color-border: #E5E7EB;
+   --color-border-light: rgba(31, 41, 51, 0.04);
+
+   /* ================================
+       TYPOGRAPHY - Apple Level
+       ================================ */
+
+   /* Font Families */
+   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+   --font-secondary: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+
+   /* Font Sizes */
+   --text-hero: clamp(48px, 8vw, 64px);
+   --text-section: clamp(24px, 4vw, 32px);
+   --text-body-lg: 18px;
+   --text-body: 16px;
+   --text-caption: 14px;
+   --text-small: 13px;
+
+   /* Font Weights */
+   --font-light: 300;
+   --font-regular: 400;
+   --font-medium: 500;
+   --font-semibold: 600;
+   --font-bold: 700;
+
+   /* Line Heights */
+   --line-height-tight: 1.2;
+   --line-height-normal: 1.4;
+   --line-height-generous: 1.6;
+
+   /* Letter Spacing */
+   --letter-spacing-tight: -0.02em;
+   --letter-spacing-normal: 0;
+   --letter-spacing-wide: 0.02em;
+
+   /* ================================
+       SPACING SYSTEM - Generous
+       ================================ */
+
+   --space-xs: 0.5rem;
+   /* 8px */
+   --space-sm: 0.75rem;
+   /* 12px */
+   --space-md: 1rem;
+   /* 16px */
+   --space-lg: 1.5rem;
+   /* 24px */
+   --space-xl: 2rem;
+   /* 32px */
+   --space-2xl: 3rem;
+   /* 48px */
+   --space-3xl: 4rem;
+   /* 64px */
+   --space-4xl: 6rem;
+   /* 96px */
+   --space-5xl: 8rem;
+   /* 128px */
+
+   /* ================================
+       BORDER RADIUS - Rounded Geometry
+       ================================ */
+
+   --radius-sm: 8px;
+   --radius-md: 12px;
+   --radius-lg: 16px;
+   --radius-xl: 24px;
+   /* Standard for cards */
+   --radius-2xl: 32px;
+   --radius-full: 9999px;
+
+   /* ================================
+       SHADOWS - Soft & Minimal
+       ================================ */
+
+   --shadow-xs: 0 1px 2px rgba(31, 41, 51, 0.04);
+   --shadow-sm: 0 2px 4px rgba(31, 41, 51, 0.06);
+   --shadow-md: 0 4px 8px rgba(31, 41, 51, 0.08);
+   --shadow-lg: 0 8px 16px rgba(31, 41, 51, 0.10);
+   --shadow-xl: 0 16px 32px rgba(31, 41, 51, 0.12);
+
+   /* ================================
+       TRANSITIONS - Calm
+       ================================ */
+
+   --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+   /* ================================
+       Z-INDEX LAYERS
+       ================================ */
+
+   --z-base: 0;
+   --z-dropdown: 1000;
+   --z-sticky: 1020;
+   --z-fixed: 1030;
+   --z-modal-backdrop: 1040;
+   --z-modal: 1050;
+   --z-tooltip: 1070;
+}
+
+/* ================================
+   GLOBAL STYLES
+   ================================ */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 16px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+   font-family: var(--font-primary);
+   font-size: var(--text-body);
+   line-height: var(--line-height-generous);
+   color: var(--color-text-primary);
+   background-color: var(--color-background);
+}
+
+/* ================================
+   TYPOGRAPHY CLASSES
+   ================================ */
+
+.text-hero {
+   font-size: var(--text-hero);
+   font-weight: var(--font-semibold);
+   line-height: var(--line-height-tight);
+   letter-spacing: var(--letter-spacing-tight);
+}
+
+.text-section {
+   font-size: var(--text-section);
+   font-weight: var(--font-medium);
+   line-height: var(--line-height-normal);
+}
+
+.text-body-lg {
+   font-size: var(--text-body-lg);
+   line-height: var(--line-height-generous);
+}
+
+.text-body {
+   font-size: var(--text-body);
+   line-height: var(--line-height-generous);
+}
+
+.text-caption {
+   font-size: var(--text-caption);
+   line-height: var(--line-height-normal);
+   color: var(--color-text-secondary);
+}
+
+.text-small {
+   font-size: var(--text-small);
+   color: var(--color-text-tertiary);
+}
+
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+
+.container {
+   max-width: 1280px;
+   margin: 0 auto;
+   padding: 0 var(--space-xl);
+}
+
+.container-narrow {
+   max-width: 760px;
+   margin: 0 auto;
+   padding: 0 var(--space-xl);
+}
+
+.section {
+   padding: var(--space-5xl) 0;
+}
+
+.card {
+   background: var(--color-surface);
+   border-radius: var(--radius-xl);
+   border: 1px solid var(--color-border);
+   padding: var(--space-2xl);
+}
+
+.card-minimal {
+   background: var(--color-surface);
+   border-radius: var(--radius-lg);
+   border: 1px solid var(--color-border-light);
+   padding: var(--space-xl);
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes slideUp {
+   from {
+      opacity: 0;
+      transform: translateY(24px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.animate-fade-in {
+   animation: fadeIn var(--transition-slow) ease-out;
+}
+
+.animate-slide-up {
+   animation: slideUp var(--transition-slow) ease-out;
+}
