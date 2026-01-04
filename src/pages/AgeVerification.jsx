@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { updateUserProfile } from '../services/firestoreService';
+import { updateUserProfile, blockUser } from '../services/firestoreService';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
 import '../styles/styles.css';
 import '../styles/variables.css';
@@ -40,6 +40,13 @@ export default function AgeVerification() {
         const age = calculateAge(birthDate);
 
         if (age < 18) {
+            // PERMANENTLY BLOCK UNDERAGE USER
+            try {
+                await blockUser(user.uid, "User is under 18 years of age");
+                console.log('🚫 Underage user permanently blocked');
+            } catch (err) {
+                console.error("Failed to block user:", err);
+            }
             setIsUnderage(true);
             return;
         }

@@ -1,0 +1,482 @@
+/* ===================================
+   Mobile-First Professional Styles
+   Stylora - Enhanced Responsive System
+   =================================== */
+
+/* =================================
+   MOBILE-FIRST BREAKPOINTS
+   ================================= */
+
+/* 
+  Strategy: Design for mobile (320px+) first,
+  then enhance for larger screens
+  
+  Breakpoints:
+  - Mobile:  320px - 767px (default)
+  - Tablet:  768px - 1023px
+  - Desktop: 1024px+
+  - Wide:    1440px+
+*/
+
+/* =================================
+   TOUCH-OPTIMIZED INTERACTIONS
+   ================================= */
+
+/* Minimum touch target size: 44x44px (Apple HIG / Material Design) */
+button,
+a,
+[role="button"],
+input[type="checkbox"],
+input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+    /* Prevents double-tap zoom */
+}
+
+/* Larger buttons on mobile for better UX */
+.btn-primary,
+.btn-secondary {
+    font-size: 1rem;
+    padding: 0.875rem 1.75rem;
+    min-height: 48px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* =================================
+   MOBILE NAVIGATION
+   ================================= */
+
+/* Bottom Navigation for Mobile */
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    min-width: 64px;
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+}
+
+.mobile-nav-item.active {
+    color: var(--color-primary);
+}
+
+.mobile-nav-icon {
+    font-size: 1.5rem;
+}
+
+.mobile-nav-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+/* =================================
+   PROFESSIONAL CARDS
+   ================================= */
+
+.card-minimal {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+    .card-minimal {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+}
+
+.card-minimal:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Glass Card - Enhanced */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .glass-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+}
+
+/* =================================
+   MOBILE-FIRST TYPOGRAPHY
+   ================================= */
+
+/* Base (Mobile) */
+.heading-primary {
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.heading-secondary {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.text-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.text-small {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+    .heading-primary {
+        font-size: 2.5rem;
+    }
+
+    .heading-secondary {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop+ */
+@media (min-width: 1024px) {
+    .heading-primary {
+        font-size: 3rem;
+    }
+
+    .heading-secondary {
+        font-size: 2.25rem;
+    }
+}
+
+/* =================================
+   MOBILE-OPTIMIZED GRIDS
+   ================================= */
+
+/* Single column on mobile by default */
+.grid-auto {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .grid-auto {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-auto {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* =================================
+   IMAGE UPLOAD ZONES
+   ================================= */
+
+.upload-zone {
+    border: 2px dashed var(--color-border, #e5e7eb);
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-zone:hover {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.02);
+}
+
+.upload-zone.dragging {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+}
+
+@media (min-width: 768px) {
+    .upload-zone {
+        padding: 3rem 2rem;
+        min-height: 300px;
+        border-radius: 16px;
+    }
+}
+
+/* =================================
+   MOBILE SPACING SYSTEM
+   ================================= */
+
+.section-mobile {
+    padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .section-mobile {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-mobile {
+        padding: 4rem 3rem;
+    }
+}
+
+/* =================================
+   SAFE AREA INSETS (iOS)
+   ================================= */
+
+.safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.safe-area-top {
+    padding-top: env(safe-area-inset-top, 0);
+}
+
+/* =================================
+   SMOOTH SCROLL BEHAVIOR
+   ================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =================================
+   MOBILE-OPTIMIZED MODALS
+   ================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .modal-overlay {
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 24px 24px 0 0;
+    padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        width: auto;
+        min-width: 500px;
+        max-width: 90vw;
+        border-radius: 24px;
+        padding: 2rem;
+    }
+}
+
+/* =================================
+   PROFESSIONAL ANIMATIONS
+   ================================= */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =================================
+   LOADING SKELETONS
+   ================================= */
+
+.skeleton {
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* =================================
+   MOBILE UTILITY CLASSES
+   ================================= */
+
+/* Hide on mobile */
+.hide-mobile {
+    display: none !important;
+}
+
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: block !important;
+    }
+}
+
+/* Show only on mobile */
+.show-mobile {
+    display: block !important;
+}
+
+@media (min-width: 768px) {
+    .show-mobile {
+        display: none !important;
+    }
+}
+
+/* Full width on mobile */
+.mobile-full-width {
+    width: 100% !important;
+}
+
+@media (min-width: 768px) {
+    .mobile-full-width {
+        width: auto !important;
+    }
+}
+
+/* Stack on mobile */
+.stack-mobile {
+    flex-direction: column !important;
+}
+
+@media (min-width: 768px) {
+    .stack-mobile {
+        flex-direction: row !important;
+    }
+}

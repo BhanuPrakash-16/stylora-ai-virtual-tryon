@@ -62,7 +62,7 @@ body::before {
 
 /* Selection */
 ::selection {
-    background: var(--color-primary);
+    background: rgba(0, 0, 0, 0.9);
     color: white;
 }
 
@@ -267,6 +267,20 @@ img {
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex !important;
+    }
+
+    .nav-cta {
+        display: inline-flex !important;
+    }
+
+    .nav-mobile-toggle {
+        display: none !important;
     }
 }
 

@@ -62,3 +62,37 @@ export const getTryOnHistory = async (userId) => {
 export const deleteTryOn = async (tryOnId) => {
     await deleteDoc(doc(db, "tryOns", tryOnId));
 };
+
+/**
+ * Check if user is blocked
+ */
+export const checkUserBlocked = async (userId) => {
+    const ref = doc(db, "users", userId);
+    const snap = await getDoc(ref);
+    if (snap.exists()) {
+        const data = snap.data();
+        return {
+            isBlocked: data.isBlocked || false,
+            blockedReason: data.blockedReason || null
+        };
+    }
+    return { isBlocked: false, blockedReason: null };
+};
+
+/**
+ * Block user permanently (underage, safety violation, etc.)
+ */
+export const blockUser = async (userId, reason) => {
+    const ref = doc(db, "users", userId);
+    await setDoc(
+        ref,
+        {
+            isBlocked: true,
+            blockedReason: reason,
+            blockedAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+        },
+        { merge: true }
+    );
+};
+

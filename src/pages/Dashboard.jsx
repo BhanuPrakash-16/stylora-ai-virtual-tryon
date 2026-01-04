@@ -6,16 +6,16 @@ import { FiArrowRight, FiSearch, FiShoppingBag, FiMenu } from 'react-icons/fi';
 import '../styles/styles.css';
 
 const CATEGORIES = [
-    { id: 1, title: 'Summer Collection', image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80' },
-    { id: 2, title: 'Editorial Blazers', image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80' },
-    { id: 3, title: 'Accessories', image: 'https://images.unsplash.com/photo-1509319117193-518fa6144a86?w=600&q=80' }
+    { id: 1, title: 'T Shirts', image: 'https://image.hm.com/assets/hm/ec/47/ec47e4c1fbed2d513d712584e31a9c0ad566a6bd.jpg?imwidth=2160' },
+    { id: 2, title: 'Shirts', image: 'https://static.zara.net/assets/public/877f/d7f3/c7db4088bd8d/bc07abd05524/02548401505-000-e1/02548401505-000-e1.jpg' },
+    { id: 3, title: 'Sarees', image: 'https://cdn.shopify.com/s/files/1/0703/5011/0958/files/Wedding_Pattu_Saree_Blouse_Designs.jpg?v=1746509591' }
 ];
 
 const FEATURED_STYLES = [
-    { id: 1, name: 'Linen Aesthetics', image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80' },
-    { id: 2, name: 'Structured Form', image: 'https://images.unsplash.com/photo-1484328861629-2ec5be6dd6bf?w=400&q=80' },
-    { id: 3, name: 'Soft Drape', image: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&q=80' },
-    { id: 4, name: 'Summer Light', image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80' }
+    { id: 1, name: 'Womens Blue Blazers', image: 'https://static.zara.net/assets/public/a813/647e/0a4249799c4c/7a9701b5d73b/07179242400-e1/07179242400-e1.jpg' },
+    { id: 2, name: 'Ethnic wear for mens', image: 'https://manyavar.scene7.com/is/image/manyavar/Manyavar2153_05-12-2022-07-11:283x395?&dpr=on,2' },
+    { id: 3, name: 'Women Churidar', image: 'https://www.everbloomindia.com/cdn/shop/files/SPPX6852_720x.jpg' },
+    { id: 4, name: 'Mens Blazers', image: 'https://static.zara.net/assets/public/0cec/6985/41f748b8a271/a00bc651f7bf/06983363922-a1/06983363922-a1.jpg' }
 ];
 
 export default function Dashboard() {
@@ -25,7 +25,7 @@ export default function Dashboard() {
     return (
         <div style={{ minHeight: '100vh', background: 'var(--color-background)', color: 'var(--color-text-primary)' }}>
 
-            {/* 1. Header (Minimal - No Commerce) */}
+            {/* 1. Header */}
             <nav className="nav-responsive" style={{
                 height: '60px',
                 margin: '0 20px',
@@ -55,7 +55,7 @@ export default function Dashboard() {
                 </div>
             </nav>
 
-            {/* 2. Hero Section (Action Focused) */}
+            {/* 2. Hero Section */}
             <section style={{ padding: '2rem' }}>
                 <div className="hero-responsive" style={{
                     borderRadius: '24px',
@@ -91,7 +91,7 @@ export default function Dashboard() {
                 </div>
             </section>
 
-            {/* 3. Browse by Category */}
+            {/* 3. Browse by Category - NOW PASSES GARMENT */}
             <section style={{ padding: '4rem 2rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
                     <h2 style={{ fontSize: '2rem', fontWeight: '500' }}>Curated for you</h2>
@@ -104,7 +104,7 @@ export default function Dashboard() {
                             key={cat.id}
                             whileHover={{ y: -5 }}
                             style={{ cursor: 'pointer' }}
-                            onClick={() => navigate('/try-on')}
+                            onClick={() => navigate('/try-on', { state: { garmentUrl: cat.image } })}
                         >
                             <div style={{
                                 aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '1.5rem',
@@ -119,12 +119,16 @@ export default function Dashboard() {
                 </div>
             </section>
 
-            {/* 4. Style Inspiration (No Prices) */}
+            {/* 4. Style Inspiration - NOW PASSES GARMENT */}
             <section style={{ padding: '2rem 2rem 6rem' }}>
                 <h2 style={{ fontSize: '2rem', fontWeight: '500', marginBottom: '2rem' }}>Try These Styles</h2>
                 <div className="grid-responsive cols-4">
                     {FEATURED_STYLES.map(item => (
-                        <div key={item.id} style={{ cursor: 'pointer' }} onClick={() => navigate('/try-on')}>
+                        <div
+                            key={item.id}
+                            style={{ cursor: 'pointer' }}
+                            onClick={() => navigate('/try-on', { state: { garmentUrl: item.image } })}
+                        >
                             <div style={{
                                 aspectRatio: '3/4', borderRadius: '24px', background: '#f5f5f5',
                                 marginBottom: '1.5rem', overflow: 'hidden', position: 'relative',

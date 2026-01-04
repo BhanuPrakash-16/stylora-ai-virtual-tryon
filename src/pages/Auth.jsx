@@ -74,15 +74,45 @@ export default function Auth() {
                 padding: 'var(--space-3xl)',
                 boxShadow: 'var(--shadow-xl)'
             }}>
+                {/* Back to Home */}
+                <div style={{ textAlign: 'left' }}>
+                    <button
+                        onClick={() => navigate('/')}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'var(--color-text-tertiary)',
+                            cursor: 'pointer',
+                            fontSize: 'var(--text-small)',
+                            transition: 'color var(--transition-base)'
+                        }}
+                        onMouseEnter={(e) => e.target.style.color = 'var(--color-text-secondary)'}
+                        onMouseLeave={(e) => e.target.style.color = 'var(--color-text-tertiary)'}
+                    >
+                        ← Back to home
+                    </button>
+                </div>
                 {/* Logo */}
                 <div style={{
                     textAlign: 'center',
                     marginBottom: 'var(--space-lg)',
-                    fontSize: '18px',
-                    fontWeight: 'var(--font-medium)',
-                    color: 'var(--color-text-primary)'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '12px'
                 }}>
-                    Stylora
+                    <img
+                        src="/images/stylora-icon.png"
+                        alt="Stylora Logo"
+                        style={{ width: '48px', height: '48px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                    />
+                    <div style={{
+                        fontSize: '18px',
+                        fontWeight: 'var(--font-medium)',
+                        color: 'var(--color-text-primary)'
+                    }}>
+                        Stylora
+                    </div>
                 </div>
 
                 {/* Title */}
@@ -312,24 +342,7 @@ export default function Auth() {
                     </button>
                 </div>
 
-                {/* Back to Home */}
-                <div style={{ textAlign: 'center', marginTop: 'var(--space-md)' }}>
-                    <button
-                        onClick={() => navigate('/')}
-                        style={{
-                            background: 'none',
-                            border: 'none',
-                            color: 'var(--color-text-tertiary)',
-                            cursor: 'pointer',
-                            fontSize: 'var(--text-small)',
-                            transition: 'color var(--transition-base)'
-                        }}
-                        onMouseEnter={(e) => e.target.style.color = 'var(--color-text-secondary)'}
-                        onMouseLeave={(e) => e.target.style.color = 'var(--color-text-tertiary)'}
-                    >
-                        ← Back to home
-                    </button>
-                </div>
+
             </div>
         </div>
     );
