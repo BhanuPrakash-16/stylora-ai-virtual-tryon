@@ -438,7 +438,7 @@ export default function Welcome() {
                                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
                                 }}>
                                     <img
-                                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&q=80"
+                                        src="/samples/tryonworkflow.jpeg"
                                         alt="Fashion editorial showcasing virtual try-on technology"
                                         style={{
                                             position: 'absolute',
