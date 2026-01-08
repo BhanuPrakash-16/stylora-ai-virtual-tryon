@@ -13,7 +13,7 @@ const CATEGORIES = [
 
 const FEATURED_STYLES = [
     { id: 1, name: 'Womens Blue Blazers', image: 'https://static.zara.net/assets/public/a813/647e/0a4249799c4c/7a9701b5d73b/07179242400-e1/07179242400-e1.jpg' },
-    { id: 2, name: 'Ethnic wear for mens', image: 'https://manyavar.scene7.com/is/image/manyavar/Manyavar2153_05-12-2022-07-11:283x395?&dpr=on,2' },
+    { id: 2, name: 'Ethnic wear for mens', image: 'https://jadeblue.com/cdn/shop/articles/Royal_1.jpg?v=1696841067&width=1100' },
     { id: 3, name: 'Women Churidar', image: 'https://www.everbloomindia.com/cdn/shop/files/SPPX6852_720x.jpg' },
     { id: 4, name: 'Mens Blazers', image: 'https://static.zara.net/assets/public/0cec/6985/41f748b8a271/a00bc651f7bf/06983363922-a1/06983363922-a1.jpg' }
 ];
