@@ -6,7 +6,7 @@ import { FiArrowRight, FiSearch, FiShoppingBag, FiMenu } from 'react-icons/fi';
 import '../styles/styles.css';
 
 const CATEGORIES = [
-    { id: 1, title: 'T Shirts', image: 'https://image.hm.com/assets/hm/ec/47/ec47e4c1fbed2d513d712584e31a9c0ad566a6bd.jpg?imwidth=2160' },
+    { id: 1, title: 'T Shirts', image: 'https://chriscross.in/cdn/shop/files/ChrisCrossBlackCottonT-Shirt.jpg?v=1740994605&width=2048' },
     { id: 2, title: 'Shirts', image: 'https://static.zara.net/assets/public/877f/d7f3/c7db4088bd8d/bc07abd05524/02548401505-000-e1/02548401505-000-e1.jpg' },
     { id: 3, title: 'Sarees', image: 'https://cdn.shopify.com/s/files/1/0703/5011/0958/files/Wedding_Pattu_Saree_Blouse_Designs.jpg?v=1746509591' }
 ];
@@ -14,7 +14,7 @@ const CATEGORIES = [
 const FEATURED_STYLES = [
     { id: 1, name: 'Womens Blue Blazers', image: 'https://static.zara.net/assets/public/a813/647e/0a4249799c4c/7a9701b5d73b/07179242400-e1/07179242400-e1.jpg' },
     { id: 2, name: 'Ethnic wear for mens', image: 'https://jadeblue.com/cdn/shop/articles/Royal_1.jpg?v=1696841067&width=1100' },
-    { id: 3, name: 'Women Churidar', image: 'https://www.everbloomindia.com/cdn/shop/files/SPPX6852_720x.jpg' },
+    { id: 3, name: 'Women Churidar', image: 'https://docket.kartmax.in/sites/9s145MyZrWdIAwpU0JYS/product-images/pretty_off_white_salwar_suit_173657506413411_white.jpg' },
     { id: 4, name: 'Mens Blazers', image: 'https://static.zara.net/assets/public/0cec/6985/41f748b8a271/a00bc651f7bf/06983363922-a1/06983363922-a1.jpg' }
 ];
 
